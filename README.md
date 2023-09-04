@@ -1,2 +1,0 @@
-# backcountryworks
-# ポートフォリオ用WORDPRESSテンプレート
