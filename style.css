@@ -1,0 +1,109 @@
+/*
+Theme Name:twentytwentyone child
+Theme URI:
+Description:WordPressテーマ「twentytwentyone」の自作子テーマです。
+Template:twentytwentyone
+Author:Yu Ishiga
+Author URI:https://backcountry-works.com/
+Version:0.0.1
+*/
+body{
+    background: #7298D0 !important;
+    color: whitesmoke !important;
+}
+@media screen and (min-width: 900px)
+{
+    header#masthead {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+    h1.site-title {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        width: max-content;
+        height: max-content;
+        overflow: hidden;
+        font-weight:bolder;
+        font-size: xx-large;
+    }
+    .p-header-nav {
+        position: absolute;
+        top: 120px;
+        left: 60px;
+    }
+    .p-header-nav ul{
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .p-header-nav ul li a{
+        text-decoration: none;
+        font-weight: 500;
+        color: whitesmoke;
+    }
+    footer.site-footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        height: max-content;
+    }
+    h2{
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    #main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    #bg,#bg1,#bg2,#bg2,#bg3,#bg4,#bg5{
+        background-size:unset;
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+    }
+    #bg{
+        background-image: url("../../../../images/2023/09/topbg_0.png");
+    }
+    #bg1{
+        background-image: url("../../../../images/2023/09/topbg_1.png");
+
+    }
+    #bg2{
+        background-image: url("../../../../images/2023/09/topbg_2-1.png");
+        
+    }
+    #bg3{
+        background-image: url("../../../../images/2023/09/topbg_3.png");
+        
+    }
+    #bg4{
+        background-image: url("../../../../images/2023/09/topbg_4.png");
+        
+    }
+    #bg5{
+        background-image: url("../../../../images/2023/09/topbg_5.png");
+        
+    }
+    .site-content,.page{
+        overflow: hidden;
+    }
+    
+}
+.widget-area, .pagination, .comments-pagination, .post-navigation, .site-footer, .site-header, .alignwide, .wide-max-width {
+    max-width: unset !important;
+}
+.site-footer > .site-info,.site-title {
+    border-top:0 !important;
+    color: whitesmoke !important   ;
+}
