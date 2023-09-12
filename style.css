@@ -102,9 +102,11 @@ body{
         overflow:hidden;
     }
     .page_content{
-        padding:30px;
-        display: flex;
-        justify-content: center;
+        padding: 30px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
     }
     .width-cont{
         max-width: 1920px;
