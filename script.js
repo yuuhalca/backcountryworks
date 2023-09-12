@@ -66,7 +66,7 @@ $(function(){
         $("#bg2").animate({left:-position/40},400);
         $("#bg3").animate({left:-position/35},400);
         $("#bg4").animate({left:-position/30},400);
-        $("#bg5").animate({left:-position/5},400);
+        $("#bg5").animate({left:-position/10},400);
         return false;
       });
 })
