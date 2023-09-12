@@ -1,6 +1,7 @@
 $(function(){
     var windowHeight = $(window).height();
     var windowWidth = $(window).width();
+    let nowWidth = windowWidth;
     var mainWidth = $("#main").width();
     $("#main,.site-content,.bg").css("width",mainWidth * 4);
     if($("#wpadminbar").length){
@@ -40,6 +41,7 @@ $(function(){
         //webkit
         $('body').scrollLeft($('body').scrollLeft() - mov * speed);
     });*/
+    
     $(window).resize(function(){
         var windowHeight = $(window).height();
         var windowWidth = $(window).width();
@@ -55,9 +57,18 @@ $(function(){
         }
         $("#main,.site-content,.bg").css("width",windowWidth * 4);
         $(".page").css("width",windowWidth);
+        nowWidth = windowWidth;
     })
 
     $("a[href^='#']").click(function(){
+        var speed = 5;
+        if(nowWidth <= 1920){
+            speed = 3;
+            console.log(5)
+        }else if(nowWidth >= 1920){
+            speed = 10;
+            console.log(10)
+        }
         var target = $(this.hash);
         var position = $(target).offset().left;
         $('html,body').animate({scrollLeft: position}, 400);
@@ -66,7 +77,7 @@ $(function(){
         $("#bg2").animate({left:-position/40},400);
         $("#bg3").animate({left:-position/35},400);
         $("#bg4").animate({left:-position/30},400);
-        $("#bg5").animate({left:-position/10},400);
+        $("#bg5").animate({left:-position/speed},400);
         return false;
       });
 })

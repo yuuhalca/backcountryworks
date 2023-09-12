@@ -99,10 +99,16 @@ body{
         
     }
     .site-content,.page{
-        overflow: hidden;
+        overflow:hidden;
     }
     .page_content{
         padding:30px;
+        display: flex;
+        justify-content: center;
+    }
+    .width-cont{
+        max-width: 1920px;
+        width: 100%;
     }
     
 }
@@ -112,4 +118,15 @@ body{
 .site-footer > .site-info,.site-title {
     border-top:0 !important;
     color: whitesmoke !important   ;
+}
+.about_table table{
+    border-collapse: separate;
+    color: black;
+}
+.about_table td{
+    border:0 !important;
+    background-color: rgba(255, 255, 255, .8);
+    margin: 1px;
+    text-align: center;
+    border-radius: 10px;
 }
