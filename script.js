@@ -14,27 +14,59 @@ $(function(){
     
     $(".page").css("width",windowWidth);
 
-    var speed = 50;
+    var speed = 200;
     var conoff = $("#content").offset();
-    var conmove = conoff.left;
+    var conmove = 0;
+    var conright = mainWidth;
     var i = 0;
     //マウスホイールで横移動
+    /*
     $('html').mousewheel(function(event, mov) {
         conmove = conmove +  (conoff.left + (mov * speed));
-        if(conmove <= 0){
-            $("#bg").css({"left":conmove/25});
-            $("#bg1").css({"left":conmove/20});
-            $("#bg2").css({"left":conmove/15});
-            $("#bg3").css({"left":conmove/10});
-            $("#bg4").css({"left":conmove/5});
-            $("#bg5").css({"left":conmove/1});
-        }else{
+        if(conmove <= 0 && conmove >= (conright * -4)){
+            $("#bg").css({"left":conmove/50});
+            $("#bg1").css({"left":conmove/45});
+            $("#bg2").css({"left":conmove/40});
+            $("#bg3").css({"left":conmove/35});
+            $("#bg4").css({"left":conmove/30});
+            $("#bg5").css({"left":conmove/5});
+        }else if(conmove < (conright * -4)){
+            conmove = conright * -4;
+        }else if(conmove > 0){
             conmove = 0;
         }
         //ie firefox
         $(this).scrollLeft($(this).scrollLeft() - mov * speed);
         //webkit
         $('body').scrollLeft($('body').scrollLeft() - mov * speed);
-        return false;   //縦スクロール不可
-    });
+    });*/
+    $(window).resize(function(){
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+        var mainWidth = $("#main").width();
+        
+        if($("#wpadminbar").length){
+            var wpbar = $("#wpadminbar").height();
+            
+            windowHeight = windowHeight - wpbar;
+            $("#main").css("height",windowHeight);
+        }else{
+            $("#main").css("height",windowHeight);
+        }
+        $("#main,.site-content,.bg").css("width",windowWidth * 4);
+        $(".page").css("width",windowWidth);
+    })
+
+    $("a[href^='#']").click(function(){
+        var target = $(this.hash);
+        var position = $(target).offset().left;
+        $('html,body').animate({scrollLeft: position}, 400);
+        $("#bg").animate({left:-position/50},400);
+        $("#bg1").animate({left:-position/45},400);
+        $("#bg2").animate({left:-position/40},400);
+        $("#bg3").animate({left:-position/35},400);
+        $("#bg4").animate({left:-position/30},400);
+        $("#bg5").animate({left:-position/5},400);
+        return false;
+      });
 })

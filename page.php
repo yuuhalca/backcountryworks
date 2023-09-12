@@ -12,14 +12,14 @@
 get_header();
 $pages = get_pages(); 
 foreach($pages as $page){
-	$pages[$page->menu_order] = $page->post_content;
+	$pages[$page->menu_order] = [$page->post_content,$page->post_name];
 }
 ksort($pages);
 $num = 0;
 foreach ( $pages as $page ) {
-	$data = "<div class='page'>";
-	$data .= $page;	
-	$data .= "</div>";
+	$data = "<div class='page' id='{$page[1]}'><div class='page_content'>";
+	$data .= $page[0];	
+	$data .= "</div></div>";
 	echo $data;
 	$num++;
 }
